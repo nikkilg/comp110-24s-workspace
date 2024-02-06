@@ -1,4 +1,4 @@
-"""EX02: Exercise 2 -- one shot battleship"""
+"""EX02: Exercise 2 -- one shot battleship."""
 
 __author__ = "730394747"
 
@@ -10,20 +10,20 @@ correct: bool = False
 # asking the player to pick a row 
 row_guess: str = input("Guess a row: ")
 row_number: int = int(row_guess)
-while not correct: # correct == False
-    if row_number > GRID_SIZE:
+while not correct:   # correct == False
+    if row_number > GRID_SIZE or row_number <= 0:
         row_guess = str(input(f"The grid is only {GRID_SIZE} by {GRID_SIZE}. Try again: "))
-        row_number: int = int(row_guess)
+        row_number = int(row_guess)
     else:
         correct = True
-    
-#asking the player to pick a column
+
+# asking the player to pick a column
 column_guess: str = input("Guess a column: ")
 column_number: int = int(column_guess)
 while correct:
-    if column_number > GRID_SIZE:
+    if column_number > GRID_SIZE or column_number <= 0:
         column_guess = str(input(f"The grid is only {GRID_SIZE} by {GRID_SIZE}. Try again: "))
-        column_number: int = int(column_guess)
+        column_number = int(column_guess)
     else: 
         correct = False
 
@@ -39,7 +39,7 @@ else:
 # printing a grid
 row_counter: int = 1
 while row_counter <= GRID_SIZE:
-    emoji_string: str = "" # string to store the emoji string for a singular row
+    emoji_string: str = ""  # string to store the emoji string for a singular row
     column_counter: int = 1  
     if row_number == row_counter:
         while column_counter <= GRID_SIZE:
@@ -55,7 +55,7 @@ while row_counter <= GRID_SIZE:
     print(emoji_string)
     row_counter = row_counter + 1
 
-#checking for hit or miss
+# checking for hit or miss
 if column_number == SECRET_COLUMN and row_number == SECRET_ROW:
     print("Hit!")
 elif column_number == SECRET_COLUMN and row_number != SECRET_ROW:
