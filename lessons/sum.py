@@ -1,4 +1,4 @@
-"""Summing the elements of a list using different loops."""
+"""CQ04 -- Summing elements of a list using different loops."""
 
 __author__ = "730394747"
 
