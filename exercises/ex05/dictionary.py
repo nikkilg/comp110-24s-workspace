@@ -61,9 +61,9 @@ def alphabetizer(my_list: list[str]) -> dict[str, list[str]]:
     for item in my_list: 
         lower = item.lower()
         if lower[0] in newdict:
-            newdict[lower[0]].append(lower)
+            newdict[lower[0]].append(item)
         else:
-            new_list = [lower]
+            new_list = [item]
             newdict[lower[0]] = new_list
     return newdict
 

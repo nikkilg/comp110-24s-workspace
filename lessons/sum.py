@@ -1,32 +1,9 @@
-"""CQ04 -- Summing elements of a list using different loops."""
-
-__author__ = "730394747"
+"""LS21 - sum all elements in a list."""
 
 
-# while loop
-def w_sum(vals: list[float]) -> float:
-    """Sum of list using a while loop."""
-    idx: int = 0
-    sum: float = 0.0
-    while idx < len(vals):
-        sum += vals[idx]
-        idx += 1
-    return sum
-
-
-# for loop
-def f_sum(vals: list[float]) -> float:
-    """Sum of list using a for... in... loop."""
-    sum: float = 0.0
-    for item in vals:
-        sum += item
-    return sum
-
-
-# for loop with range
-def f_range_sum(vals: list[float]) -> float:
-    """Sum of list using a for loop and range."""
-    sum: float = 0.0
-    for item in range(0, len(vals)):
-        sum += vals[item]
-    return sum
+def sum(elements: list[int]) -> int:
+    """Sum all elements in list named elements."""
+    total: int = 0
+    for item in elements:
+        total += item
+    return total
