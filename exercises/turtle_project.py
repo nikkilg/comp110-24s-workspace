@@ -60,7 +60,7 @@ def draw_ground(turtle1: Turtle, x: float, y: float, length: float, height: floa
 
 
 def draw_trunk(turtle1: Turtle, x: float, y: float, width: float) -> None:
-    """Draw a square of the given width whose top-left corner is located at x, y."""
+    """Draw a square of the given width whose bottom-right corner is located at x, y."""
     # getting turtle to correct starting location
     turtle1.penup()
     turtle1.goto(x, y) 
