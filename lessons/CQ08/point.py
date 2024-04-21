@@ -26,3 +26,35 @@ class Point:
         """Mutating Method: Point#scale."""
         new_point: Point = Point(self.x * factor, self.y * factor)
         return new_point
+    
+    def __str__(self):
+        """Magic method: print prettier version of point."""
+        return f"({self.x}, {self.y})"
+
+    def __mul__(self, factor: float) -> Point:
+        """Magic method: overriding multiplication."""
+        new_point: Point = Point(self.x * factor, self.y * factor)
+        return new_point
+    
+    def __getitem__(self, index: int) -> float:
+        """Overloading subscription notation: being able to index Point even though it's not a list."""
+        if index == 0: 
+            return self.x
+        elif index == 1:
+            return self.y
+        else:
+            raise IndexError
+
+        
+a: Point = Point(1.0, 2.0)
+print(str(a))
+b: Point = a.scale(3.0)
+
+# due to the __mul__ function, it now knows what "*" means and can multiply instead of giving an error
+# a is corresponding with self and 3.0 is corresponding with factor 
+b: Point = a * 3.0
+print(b)
+print(f"My point is: {b}")
+
+# due to __getitem__, can now print y coordinate when calling b[1]
+print(b[1])
